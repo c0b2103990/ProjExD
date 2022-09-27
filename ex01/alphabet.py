@@ -17,9 +17,9 @@ def shutudai(list_a):
 
     global kesonn
     kesonn = random.sample(taisyou, kesonn_num)
-    print("欠損文字：")
+    ##print("欠損文字：")
     for j in kesonn:
-        print(j, end=" ")
+        ##print(j, end=" ")
         taisyou.remove(j)
     print()
 
@@ -30,7 +30,7 @@ def shutudai(list_a):
         print(k, end = " ")
     print()
 
-def kaido():
+def kaitou():
     a = int(input("欠損文字はいくつあるでしょうか？："))
     if a == 2:
         print("正解です。それでは、具体的に欠損文字を１つずつ実入力してください")
@@ -41,11 +41,11 @@ def kaido():
         else:
             print("不正解です。またチャレンジしてください。")
             shutudai(list_a)
-            kaido()
+            kaitou()
     else:
         print("不正解です。またチャレンジしてください。")
         shutudai(list_a)
-        kaido()
+        kaitou()
 
 
     
@@ -56,4 +56,4 @@ if __name__ == "__main__":
     for i in range(65, 91): #A~Zリスト
         list_a.append(chr(i)) 
     shutudai(list_a)
-    kaido()
+    kaitou()
