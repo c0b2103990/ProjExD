@@ -2,8 +2,13 @@ import tkinter as tk
 import tkinter.messagebox as tkm
 
 root = tk.Tk()
-root.geometry("300x500")
-r = 0
+root.geometry("300x600")
+
+entry = tk.Entry(root, width=10, font=("Times New Roman", 40), justify="right")
+entry.grid(columnspan = 3)
+
+
+r = 1
 c = 0
 
 def button_click(event):
