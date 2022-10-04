@@ -16,7 +16,10 @@ def button_click(event):
     num = btn["text"]
     entry.insert(tk.END, num)
 
-for i,num in enumerate(range(9 ,-1, -1), 1):
+numbers = list(range(9, -1, -1))
+operators = ["+"]
+
+for i,num in enumerate(numbers + operators, 1):
     button = tk.Button(root, text=f"{num}",
                       font = ("Times New Roman", 30),
                       width=4, height=2)
