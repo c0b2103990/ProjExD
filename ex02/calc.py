@@ -14,8 +14,7 @@ c = 0
 def button_click(event):
     btn = event.widget
     num = btn["text"]
-    tkm.showinfo(f"{num}", f"{num}ボタンが押されました")
-    
+    entry.insert(tk.END, num)
 
 for i,num in enumerate(range(9 ,-1, -1), 1):
     button = tk.Button(root, text=f"{num}",
