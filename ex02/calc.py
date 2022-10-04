@@ -22,9 +22,14 @@ def button_zero(event):
 
 def button_eq(event):
     eqn = entry.get()
-    res = eval(eqn)
-    entry.delete(0, tk.END)
-    entry.insert(tk.END, res)
+    try:
+        eval(eqn)
+    except SyntaxError:
+        entry.delete(0, tk.END)
+    else:
+        res = eval(eqn)
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, res)
 
 def button_ac(event):
     entry.delete(0, tk.END)
