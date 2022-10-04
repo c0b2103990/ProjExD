@@ -1,5 +1,4 @@
 import tkinter as tk
-import tkinter.messagebox as tkm
 
 root = tk.Tk()
 root.geometry("300x600")
@@ -25,6 +24,8 @@ def button_eq(event):
     try:
         eval(eqn)
     except SyntaxError:
+        entry.delete(0, tk.END)
+    except ZeroDivisionError:
         entry.delete(0, tk.END)
     else:
         res = eval(eqn)
