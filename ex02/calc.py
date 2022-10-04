@@ -40,6 +40,12 @@ def button_cr(event):
     entry.delete(0,tk.END)
     entry.insert(tk.END, clr)
 
+def button_dot(event):
+    btn = event.widget
+    num = btn["text"]
+    entry.insert(tk.END, ".")
+
+
 ac = tk.Button(root, text="AC",
                font = ("Times New Roman", 30),
                width=4, height=1)
@@ -51,6 +57,13 @@ cr = tk.Button(root, text="C",
               width=4, height=1)
 cr.bind("<1>", button_cr)
 cr.grid(row = r, column = c + 1)
+
+dot = tk.Button(root, text=".",
+               font = ("Times New Roman", 30),
+               width=4, height=1)
+dot.bind("<1>", button_dot)
+dot.grid(row = r, column = c + 2)
+
 
 numbers = list(range(9, -1, -1))
 operators = ["00","+", "-", "*", "/"]
