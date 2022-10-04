@@ -29,15 +29,33 @@ def button_eq(event):
 def button_ac(event):
     entry.delete(0, tk.END)
 
+def button_cr(event):
+    rist = entry.get()
+    clr = rist[:-1]
+    entry.delete(0,tk.END)
+    entry.insert(tk.END, clr)
+
+ac = tk.Button(root, text="AC",
+               font = ("Times New Roman", 30),
+               width=4, height=1)
+ac.bind("<1>", button_ac)
+ac.grid(row = r, column = c)
+
+cr = tk.Button(root, text="C",
+              font = ("Times New Roman", 30),
+              width=4, height=1)
+cr.bind("<1>", button_cr)
+cr.grid(row = r, column = c + 1)
+
 numbers = list(range(9, -1, -1))
-operators = ["00","+"]
+operators = ["00","+", "-", "*", "/"]
 
 for i,num in enumerate(numbers + operators, 1):
     button = tk.Button(root, text=f"{num}",
                       font = ("Times New Roman", 30),
                       width=4, height=1)
     button.bind("<1>", button_click)
-    button.grid(row=r, column=c)
+    button.grid(row=r + 1, column=c)
 
     c += 1
     if i%3 == 0:
@@ -46,14 +64,10 @@ for i,num in enumerate(numbers + operators, 1):
         
 
 eq = tk.Button(root, text="=",
-                      font = ("Times New Roman", 30),
-                      width=4, height=1)
+               font = ("Times New Roman", 30),
+               width=4, height=1)
 eq.bind("<1>", button_eq)
-eq.grid(row = r, column = c)
+eq.grid(row = r + 1, column = c)
 
-ac = tk.Button(root, text="AC",
-                      font = ("Times New Roman", 30),
-                      width=4, height=1)
-ac.bind("<1>", button_ac)
-ac.grid(row = r, column = c)
+
 root.mainloop()
