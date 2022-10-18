@@ -56,7 +56,6 @@ if __name__ == "__main__":
     cx, cy = mx * 100 + 50, my * 100 + 50
     cv.create_image(cx, cy, image=tori, tag="tori")
 
-
     key = ""
     maze_lst[7][13] = 2
 
