@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 import maze_maker as mm
 
 def key_down(event):
@@ -22,6 +23,10 @@ def main_proc():
         mx += 1
     if maze_lst[my][mx] == 0: 
         cx, cy = mx*100+50, my*100+50
+    elif maze_lst[my][mx] == 2:
+        cv.coords("tori", cx, cy)
+        messagebox.showinfo("clear","clear") 
+        root.destroy()
     else: 
         if key == "Up":
             my += 1
@@ -53,6 +58,7 @@ if __name__ == "__main__":
 
 
     key = ""
+    maze_lst[7][13] = 2
 
     root.bind("<KeyPress>", key_down)
     root.bind("<KeyRelease>", key_up)
