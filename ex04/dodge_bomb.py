@@ -43,7 +43,7 @@ def main():
         scrn_sfc.blit(bomb_sfc, bomb_rct)
         scrn_sfc.blit(bomb_sfc, bomb_rct2)
         for event in pg.event.get():
-            if event.type == pg.QUIT: 
+            if event.type == pg.QUIT:
                 return
 
         key_states = pg.key.get_pressed()
