@@ -71,8 +71,8 @@ def main():
         yoko, tate = check_bound(bomb_rct,scrn_rct)
         vx *= yoko
         vy *= tate
-        vx *= 1.001 #加速
-        vy *= 1.001
+        vx *= 1.0001 #加速
+        vy *= 1.0001
         bomb_rct.move_ip(vx, vy)
         bomb_rct2.move_ip(vx, vy)
 
