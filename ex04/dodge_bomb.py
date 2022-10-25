@@ -37,6 +37,7 @@ def main():
     vx, vy = +1, +1
 
     clock = pg.time.Clock()
+    
     while True:
         scrn_sfc.blit(bg_sfc, bg_rct)
         scrn_sfc.blit(tori_sfc, tori_rct)
