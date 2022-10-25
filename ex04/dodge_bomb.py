@@ -19,6 +19,7 @@ def main():
     pg.draw.circle(bomb_sfc,(255, 0, 0), (10, 10), 10)
     bomb_rct = bomb_sfc.get_rect()
     bomb_rct.centerx, bomb_rct.centery = randint(0, scrn_rct.width), randint(0, scrn_rct.height)
+    vx, vy = +1, +1
 
     clock = pg.time.Clock()
     while True:
@@ -37,6 +38,8 @@ def main():
             tori_rct.centerx -= 1
         if key_states[pg.K_RIGHT]:
             tori_rct.centerx += 1
+        
+        bomb_rct.move_ip(vx, vy)
 
         pg.display.update()
         clock.tick(1000)
