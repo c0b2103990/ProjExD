@@ -66,6 +66,9 @@ def main():
         vy *= tate
         bomb_rct.move_ip(vx, vy)
 
+        if tori_rct.colliderect(bomb_rct):
+            return
+
         pg.display.update()
         clock.tick(1000)
 
