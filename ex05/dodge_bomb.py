@@ -2,6 +2,7 @@ import pygame as pg
 import sys
 from random import randint
 
+
 class Screen:
     def __init__(self, title, wh, bgimg):
         pg.display.set_caption(title) #逃げろ！こうかとん
@@ -61,7 +62,8 @@ class Bomb:
         yoko, tate = check_bound(self.rct, scr.rct)
         self.vx *= yoko
         self.vy *= tate
-        self.blit(scr) # =scr.sfc.blit(self.sfc, self.rct)
+        self.blit(scr)
+
 
 class Ufo:
     def __init__(self, img, vxy,zoom ):
